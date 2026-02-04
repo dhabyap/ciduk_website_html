@@ -64,6 +64,25 @@
 <body class="bg-gaming-grid overflow-x-hidden">
     <div class="scanline"></div>
 
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md transition-all duration-500 opacity-0 pointer-events-none">
+        <div class="max-w-xl w-full mx-4 glass p-8 md:p-12 rounded-[3rem] border-[#00f2ff]/30 shadow-[0_0_50px_rgba(0,242,255,0.2)] relative overflow-hidden">
+            <div class="absolute inset-0 bg-gaming-grid opacity-10"></div>
+            <div class="relative z-10 text-center">
+                <div class="w-16 h-16 bg-[#00f2ff]/20 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-[#00f2ff]/30">
+                    <i data-lucide="hand-metal" class="text-[#00f2ff] w-10 h-10"></i>
+                </div>
+                <h2 class="text-3xl font-heading font-black mb-6 uppercase italic tracking-tighter">Halo <span class="text-[#00f2ff]">Bang Ciduk!</span></h2>
+                <div class="text-gray-300 font-medium leading-[1.8] mb-10 text-lg italic">
+                    "Halo Bang Ciduk! Ini adalah website yang saya kembangkan khusus untuk mempermudah proses seleksi CWK. Saya perhatikan sistem pendaftaran harus dilakukan dengan sangat cepat, jadi saya buatkan form pendaftaran ini agar Bang Ciduk bisa lebih mudah mengelola dan mengacak peserta yang akan ikut bertanding di Clan War."
+                </div>
+                <button onclick="closeModal()" class="px-12 py-4 bg-[#00f2ff] text-black font-black rounded-2xl uppercase tracking-widest hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,242,255,0.4)]">
+                    Siap, Gas!
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -150,12 +169,12 @@
             <div>
                 <div class="text-[#00f2ff] mb-4"><i data-lucide="trophy" class="w-10 h-10"></i></div>
                 <div class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Persyaratan</div>
-                <div class="text-3xl font-heading font-black">TH 13+</div>
+                <div class="text-3xl font-heading font-black">TH 15+</div>
             </div>
             <div>
                 <div class="text-[#00f2ff] mb-4"><i data-lucide="users" class="w-10 h-10"></i></div>
                 <div class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Format War</div>
-                <div class="text-3xl font-heading font-black">15 vs 15</div>
+                <div class="text-3xl font-heading font-black">5 vs 5</div>
             </div>
             <div>
                 <div class="text-[#00f2ff] mb-4"><i data-lucide="tv" class="w-10 h-10"></i></div>
@@ -183,15 +202,15 @@
                     <div class="w-16 h-16 bg-[#00f2ff]/10 rounded-2xl flex items-center justify-center mb-8">
                         <i data-lucide="shield" class="w-10 h-10 text-[#00f2ff]"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Persyaratan TH</h3>
-                    <p class="text-gray-400 font-medium leading-relaxed">Clan harus memiliki anggota dengan Town Hall minimal level 13 untuk berpartisipasi.</p>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Level Hero</h3>
+                    <p class="text-gray-400 font-medium leading-relaxed">Minimal -5 level hero dari level maksimal untuk setiap Town Hall yang ikut.</p>
                 </div>
                 <div class="group glass p-10 rounded-[2.5rem] hover:border-[#00f2ff]/50 transition-all relative overflow-hidden">
                     <div class="w-16 h-16 bg-[#00f2ff]/10 rounded-2xl flex items-center justify-center mb-8">
                         <i data-lucide="swords" class="w-10 h-10 text-[#00f2ff]"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Format War</h3>
-                    <p class="text-gray-400 font-medium leading-relaxed">War dilakukan dengan format 15 vs 15. Pastikan semua anggota siap tempur dan standby.</p>
+                    <p class="text-gray-400 font-medium leading-relaxed">War dilakukan dengan format 5 vs 5. Pastikan semua anggota siap tempur dan standby.</p>
                 </div>
                 <div class="group glass p-10 rounded-[2.5rem] hover:border-[#00f2ff]/50 transition-all relative overflow-hidden">
                     <div class="w-16 h-16 bg-[#00f2ff]/10 rounded-2xl flex items-center justify-center mb-8">
@@ -304,6 +323,18 @@
         lucide.createIcons();
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('active');
+        }
+
+        // Modal Logic
+        window.addEventListener('load', () => {
+            const modal = document.getElementById('welcome-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('.glass').classList.add('scale-100');
+        });
+
+        function closeModal() {
+            const modal = document.getElementById('welcome-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
         }
     </script>
 </body>
