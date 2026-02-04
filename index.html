@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciduk Warior | CWK Monthly Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --background: #020617;
+        }
+        body {
+            background-color: var(--background);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-heading { font-family: 'Outfit', sans-serif; }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .bg-gaming-grid {
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, #00a2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(0deg, transparent 0%, rgba(0, 242, 255, 0.02) 50%, transparent 100%);
+            position: absolute;
+            pointer-events: none;
+            z-index: 10;
+            animation: scanline 8s linear infinite;
+        }
+        @keyframes scanline {
+            0% { top: -100px; }
+            100% { top: 100%; }
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(0, 242, 255, 0.3);
+            color: transparent;
+        }
+        #mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gaming-grid overflow-x-hidden">
+    <div class="scanline"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#00f2ff]/20 rounded-lg flex items-center justify-center border border-[#00f2ff]/30">
+                    <i data-lucide="sword" class="text-[#00f2ff] w-6 h-6"></i>
+                </div>
+                <span class="font-heading font-black text-2xl tracking-tighter italic uppercase">
+                    CIDUK<span class="text-[#00f2ff]">WARIOR</span>
+                </span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-[10px] font-black tracking-[0.2em] uppercase">
+                <a href="#rules" class="text-gray-400 hover:text-[#00f2ff] transition-colors">Aturan</a>
+                <a href="#benefits" class="text-gray-400 hover:text-[#00f2ff] transition-colors">Benefit</a>
+                <a href="#faq" class="text-gray-400 hover:text-[#00f2ff] transition-colors">FAQ</a>
+                <a href="register.html" class="px-8 py-2.5 bg-[#00f2ff] text-black rounded-lg font-black hover:scale-105 transition-transform flex items-center gap-2">
+                    DAFTAR <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button onclick="toggleMenu()" class="md:hidden text-[#00f2ff]">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 glass pt-24 pb-8 px-6 md:hidden">
+        <div class="flex flex-col gap-6 text-center">
+            <a href="#rules" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-white">Aturan</a>
+            <a href="#benefits" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-white">Benefit</a>
+            <a href="#faq" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-white">FAQ</a>
+            <a href="register.html" class="mt-4 px-8 py-5 bg-[#00f2ff] text-black rounded-2xl font-black text-xl uppercase italic">Daftar Sekarang</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative pt-48 pb-32 md:pt-64 md:pb-48 text-center overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-[10%] left-1/2 -translate-x-1/2 w-[80%] h-[80%] bg-[#00f2ff]/10 blur-[150px] rounded-full"></div>
+            <div class="absolute -bottom-[20%] right-[10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 glass rounded-full text-[10px] md:text-xs font-black tracking-[0.2em] text-[#00f2ff] mb-12 border-[#00f2ff]/20 uppercase">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f2ff] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-[#00f2ff] shadow-[0_0_10px_#00f2ff]"></span>
+                </span>
+                Pendaftaran CWK Februari Dibuka
+            </div>
+            
+            <h1 class="text-5xl md:text-[9.5rem] font-heading font-black tracking-tighter leading-[0.85] uppercase italic mb-8">
+                Ajang <br>
+                <span class="primary-gradient drop-shadow-[0_0_30px_rgba(0,242,255,0.3)]">Pembuktian</span>
+            </h1>
+            
+            <h2 class="text-xl md:text-4xl font-heading font-bold text-gray-400 mb-16 tracking-[0.4em] uppercase">
+                Clan Terkuat <span class="text-[#00f2ff] italic text-stroke">Indonesia</span>
+            </h2>
+            
+            <p class="max-w-2xl mx-auto text-gray-400 text-base md:text-xl mb-16 font-medium leading-relaxed">
+                Bergabunglah dalam event prestisius <span class="text-white font-bold">Clan War Khusus (CWK)</span> bersama Ciduk Warior. 
+                Raih Reputasi Abadi dan tunjukkan kekuatan clan kalian di hadapan ribuan viewers!
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="register.html" class="w-full sm:w-auto px-16 py-6 bg-[#00f2ff] text-black rounded-2xl font-black text-2xl shadow-[0_20px_40px_-15px_rgba(0,242,255,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 uppercase italic">
+                    Daftar Sekarang <i data-lucide="chevron-right" class="w-8 h-8"></i>
+                </a>
+                <a href="#rules" class="w-full sm:w-auto px-12 py-6 glass border-white/10 text-white rounded-2xl font-bold text-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest">
+                    Aturan <i data-lucide="gamepad-2" class="w-6 h-6 opacity-50"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 glass border-y border-white/5 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">
+            <div>
+                <div class="text-[#00f2ff] mb-4"><i data-lucide="trophy" class="w-10 h-10"></i></div>
+                <div class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Persyaratan</div>
+                <div class="text-3xl font-heading font-black">TH 13+</div>
+            </div>
+            <div>
+                <div class="text-[#00f2ff] mb-4"><i data-lucide="users" class="w-10 h-10"></i></div>
+                <div class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Format War</div>
+                <div class="text-3xl font-heading font-black">15 vs 15</div>
+            </div>
+            <div>
+                <div class="text-[#00f2ff] mb-4"><i data-lucide="tv" class="w-10 h-10"></i></div>
+                <div class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Live On</div>
+                <div class="text-3xl font-heading font-black">YouTube</div>
+            </div>
+            <div>
+                <div class="text-[#00f2ff] mb-4"><i data-lucide="shield-check" class="w-10 h-10"></i></div>
+                <div class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Status</div>
+                <div class="text-3xl font-heading font-black text-[#00f2ff] animate-pulse">Open</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-7xl font-heading font-black mb-4 tracking-tighter uppercase italic">PERATURAN <span class="text-[#00f2ff] text-stroke">EVENT</span></h2>
+                <div class="h-2 w-32 bg-[#00f2ff] mx-auto rounded-full shadow-[0_0_20px_#00f2ff]"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="group glass p-10 rounded-[2.5rem] hover:border-[#00f2ff]/50 transition-all relative overflow-hidden">
+                    <div class="w-16 h-16 bg-[#00f2ff]/10 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="shield" class="w-10 h-10 text-[#00f2ff]"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Persyaratan TH</h3>
+                    <p class="text-gray-400 font-medium leading-relaxed">Clan harus memiliki anggota dengan Town Hall minimal level 13 untuk berpartisipasi.</p>
+                </div>
+                <div class="group glass p-10 rounded-[2.5rem] hover:border-[#00f2ff]/50 transition-all relative overflow-hidden">
+                    <div class="w-16 h-16 bg-[#00f2ff]/10 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="swords" class="w-10 h-10 text-[#00f2ff]"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Format War</h3>
+                    <p class="text-gray-400 font-medium leading-relaxed">War dilakukan dengan format 15 vs 15. Pastikan semua anggota siap tempur dan standby.</p>
+                </div>
+                <div class="group glass p-10 rounded-[2.5rem] hover:border-[#00f2ff]/50 transition-all relative overflow-hidden">
+                    <div class="w-16 h-16 bg-[#00f2ff]/10 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="zap" class="w-10 h-10 text-[#00f2ff]"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Sportivitas</h3>
+                    <p class="text-gray-400 font-medium leading-relaxed">Dilarang keras menggunakan cheat, mod, atau perilaku toxic. Pelanggaran berakibat ban permanen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-32 relative bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-5xl md:text-8xl font-heading font-black mb-12 tracking-tighter italic uppercase leading-[0.85]">
+                    KENAPA <br>
+                    <span class="text-[#00f2ff]">HARUS IKUT?</span>
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6 group">
+                        <div class="mt-1 bg-[#00f2ff]/10 p-3 rounded-2xl text-[#00f2ff] group-hover:bg-[#00f2ff]/20 transition-all">
+                            <i data-lucide="megaphone" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xl text-gray-300 font-bold group-hover:text-white transition-colors">Shoutout eksklusif di channel YouTube Ciduk Warior</p>
+                    </div>
+                    <div class="flex items-start gap-6 group">
+                        <div class="mt-1 bg-[#00f2ff]/10 p-3 rounded-2xl text-[#00f2ff] group-hover:bg-[#00f2ff]/20 transition-all">
+                            <i data-lucide="star" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xl text-gray-300 font-bold group-hover:text-white transition-colors">Clan Spotlight untuk para pemenang CWK</p>
+                    </div>
+                    <div class="flex items-start gap-6 group">
+                        <div class="mt-1 bg-[#00f2ff]/10 p-3 rounded-2xl text-[#00f2ff] group-hover:bg-[#00f2ff]/20 transition-all">
+                            <i data-lucide="hard-hat" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xl text-gray-300 font-bold group-hover:text-white transition-colors">Masuk ke komunitas elit Clashers Indonesia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-video glass rounded-[3rem] overflow-hidden relative group border-white/10">
+                    <div class="absolute inset-0 bg-gaming-grid opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/40">
+                         <div class="w-20 h-20 bg-[#00f2ff] rounded-full flex items-center justify-center shadow-[0_0_30px_#00f2ff] mb-6">
+                            <i data-lucide="play" class="w-10 h-10 text-black fill-current"></i>
+                         </div>
+                         <div class="text-center">
+                             <span class="text-[#00f2ff] font-black uppercase tracking-widest text-xs italic">CWK Event Recap</span>
+                             <h4 class="text-white font-heading font-black text-xl italic uppercase">Elite Clan War Highlights</h4>
+                         </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-[#00f2ff]/20 blur-[100px] -z-10 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-32 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-7xl font-heading font-black mb-4 tracking-tighter uppercase italic">FAQ</h2>
+                <div class="h-2 w-20 bg-[#00f2ff] mx-auto rounded-full shadow-[0_0_15px_#00f2ff]"></div>
+                <p class="mt-8 text-gray-500 font-black uppercase tracking-widest italic tracking-[0.2em]">Pertanyaan <span class="text-[#00f2ff]">Populer</span></p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:bg-white/[0.05] transition-all group">
+                    <h3 class="text-xl md:text-2xl font-black mb-6 flex items-center gap-4 italic uppercase">
+                        <span class="text-[#00f2ff]/40">Q1.</span> Bagaimana cara daftar?
+                    </h3>
+                    <p class="text-gray-400 font-medium pl-10 border-l-2 border-[#00f2ff]/20 group-hover:border-[#00f2ff]/50 transition-all leading-relaxed">
+                        Cukup klik tombol "Daftar Sekarang", isi detail clan dan kontak leader, lalu tunggu verifikasi dari Admin via WhatsApp.
+                    </p>
+                </div>
+                <div class="glass p-8 md:p-12 rounded-[2.5rem] border-white/5 hover:bg-white/[0.05] transition-all group">
+                    <h3 class="text-xl md:text-2xl font-black mb-6 flex items-center gap-4 italic uppercase">
+                        <span class="text-[#00f2ff]/40">Q2.</span> Apakah berbayar?
+                    </h3>
+                    <p class="text-gray-400 font-medium pl-10 border-l-2 border-[#00f2ff]/20 group-hover:border-[#00f2ff]/50 transition-all leading-relaxed">
+                        Tidak. Pendaftaran event CWK Ciduk Warior sepenuhnya GRATIS untuk semua clan yang memenuhi kriteria.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 text-center mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <i data-lucide="sword" class="text-[#00f2ff] w-8 h-8"></i>
+                <span class="font-heading font-black text-3xl tracking-tighter italic uppercase text-white">
+                    CIDUK<span class="text-[#00f2ff]">WARIOR</span>
+                </span>
+            </div>
+            <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-12">Building the strongest competitive community in Indonesia.</p>
+            <div class="flex justify-center gap-8 mb-16">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="youtube"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="terminal"></i></a>
+            </div>
+            <p class="text-gray-600 text-[10px] uppercase font-black tracking-[0.3em]">© 2024 Ciduk Warior CWK. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
