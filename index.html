@@ -64,21 +64,38 @@
 <body class="bg-gaming-grid overflow-x-hidden">
     <div class="scanline"></div>
 
-    <!-- Welcome Modal -->
-    <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md transition-all duration-500 opacity-0 pointer-events-none">
-        <div class="max-w-xl w-full mx-4 glass p-8 md:p-12 rounded-[3rem] border-[#00f2ff]/30 shadow-[0_0_50px_rgba(0,242,255,0.2)] relative overflow-hidden">
+    <!-- Welcome Overlay -->
+    <div id="welcome-overlay" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl transition-all duration-700 opacity-0 pointer-events-none">
+        <div class="max-w-2xl w-full mx-4 glass p-8 md:p-12 rounded-[3.5rem] border-[#00f2ff]/30 shadow-[0_0_80px_rgba(0,242,255,0.25)] relative overflow-hidden transform scale-95 transition-transform duration-700">
             <div class="absolute inset-0 bg-gaming-grid opacity-10"></div>
+            
+            <!-- Prototype Badge -->
+            <div class="absolute top-8 right-8 px-4 py-1.5 bg-[#00f2ff]/10 border border-[#00f2ff]/30 rounded-full text-[10px] font-black text-[#00f2ff] uppercase tracking-widest italic animate-pulse">
+                Prototype / Example
+            </div>
+
             <div class="relative z-10 text-center">
-                <div class="w-16 h-16 bg-[#00f2ff]/20 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-[#00f2ff]/30">
-                    <i data-lucide="hand-metal" class="text-[#00f2ff] w-10 h-10"></i>
+                <div class="w-20 h-20 bg-[#00f2ff]/20 rounded-[2rem] flex items-center justify-center mx-auto mb-10 border border-[#00f2ff]/30 shadow-[0_0_30px_rgba(0,242,255,0.2)]">
+                    <i data-lucide="layout" class="text-[#00f2ff] w-12 h-12"></i>
                 </div>
-                <h2 class="text-3xl font-heading font-black mb-6 uppercase italic tracking-tighter">Halo <span class="text-[#00f2ff]">Bang Ciduk!</span></h2>
-                <div class="text-gray-300 font-medium leading-[1.8] mb-10 text-lg italic">
-                    "Halo Bang Ciduk! Ini adalah website yang saya kembangkan khusus untuk mempermudah proses seleksi CWK. Saya perhatikan sistem pendaftaran harus dilakukan dengan sangat cepat, jadi saya buatkan form pendaftaran ini agar Bang Ciduk bisa lebih mudah mengelola dan mengacak peserta yang akan ikut bertanding di Clan War."
+                
+                <h2 class="text-4xl md:text-5xl font-heading font-black mb-8 uppercase italic tracking-tighter leading-none">
+                    Halo <span class="text-[#00f2ff]">Bang Ciduk!</span>
+                </h2>
+                
+                <div class="space-y-6 text-gray-300 font-medium leading-relaxed mb-12 text-lg md:text-xl italic">
+                    <p>"Halo Bang Ciduk! Ini adalah website yang saya kembangkan khusus untuk mempermudah proses seleksi CWK."</p>
+                    <div class="h-px w-20 bg-[#00f2ff]/30 mx-auto"></div>
+                    <p class="text-sm md:text-base text-gray-400 not-italic">
+                        <span class="text-[#00f2ff] font-bold uppercase tracking-wider">Note:</span> Website ini adalah <span class="text-white">PROTOTYPE</span>. Semua tampilan dan fitur di sini hanyalah contoh, Bang Ciduk bebas request untuk mengubah apapun sesuai kebutuhan (layout, warna, aturan, dll).
+                    </p>
                 </div>
-                <button onclick="closeModal()" class="px-12 py-4 bg-[#00f2ff] text-black font-black rounded-2xl uppercase tracking-widest hover:scale-105 transition-all shadow-[0_10px_20px_rgba(0,242,255,0.4)]">
-                    Siap, Gas!
-                </button>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="closeOverlay()" class="px-12 py-5 bg-[#00f2ff] text-black font-heading font-black rounded-2xl uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_20px_40px_-10px_rgba(0,242,255,0.5)] flex items-center justify-center gap-3">
+                        Gaskeun Bang! <i data-lucide="rocket" class="w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -100,6 +117,10 @@
                 <a href="#rules" class="text-gray-400 hover:text-[#00f2ff] transition-colors">Aturan</a>
                 <a href="#benefits" class="text-gray-400 hover:text-[#00f2ff] transition-colors">Benefit</a>
                 <a href="#faq" class="text-gray-400 hover:text-[#00f2ff] transition-colors">FAQ</a>
+                <div class="h-6 w-px bg-white/10 mx-2"></div>
+                <a href="admin.html" class="text-[#00f2ff]/70 hover:text-[#00f2ff] transition-all flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i> ADMIN
+                </a>
                 <a href="register.html" class="px-8 py-2.5 bg-[#00f2ff] text-black rounded-lg font-black hover:scale-105 transition-transform flex items-center gap-2">
                     DAFTAR <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
@@ -118,6 +139,7 @@
             <a href="#rules" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-white">Aturan</a>
             <a href="#benefits" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-white">Benefit</a>
             <a href="#faq" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-white">FAQ</a>
+            <a href="admin.html" onclick="toggleMenu()" class="text-2xl font-black uppercase italic tracking-widest text-[#00f2ff]">Admin Panel</a>
             <a href="register.html" class="mt-4 px-8 py-5 bg-[#00f2ff] text-black rounded-2xl font-black text-xl uppercase italic">Daftar Sekarang</a>
         </div>
     </div>
@@ -325,16 +347,20 @@
             document.getElementById('mobile-menu').classList.toggle('active');
         }
 
-        // Modal Logic
+        // Welcome Overlay Logic
         window.addEventListener('load', () => {
-            const modal = document.getElementById('welcome-modal');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.querySelector('.glass').classList.add('scale-100');
+            const overlay = document.getElementById('welcome-overlay');
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.querySelector('.glass').classList.remove('scale-95');
+                overlay.querySelector('.glass').classList.add('scale-100');
+            }, 500);
         });
 
-        function closeModal() {
-            const modal = document.getElementById('welcome-modal');
-            modal.classList.add('opacity-0', 'pointer-events-none');
+        function closeOverlay() {
+            const overlay = document.getElementById('welcome-overlay');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.querySelector('.glass').classList.add('scale-95');
         }
     </script>
 </body>
